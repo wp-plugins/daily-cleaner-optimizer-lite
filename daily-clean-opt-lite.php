@@ -4,7 +4,7 @@ Plugin Name: Daily Cleaner & Optimizer Lite
 Plugin URI: http://additifstabac.free.fr/index.php/daily-cleaner-optimizer-lite-un-plugin-tres-leger-pour-nettoyer-et-optimiser-wordpress-automatiquement/
 Description: Nettoyage et optimisation automatique et/ou manuelle de la base de données.
 Text Domain: daily-clean-opt-lite
-Version: 1.1
+Version: 1.2
 Author: luciole135
 Author URI: http://additifstabac.free.fr
 */
@@ -31,7 +31,7 @@ function clean_opt_widget () {
 	$tableau='';
 	
 	if ($clean or $auto) 
-		{$wpdb->query("delete from $wpdb->posts where post_type='revision'");
+		{$wpdb->query("delete from $wpdb->posts where post_type='revision' OR post_status = 'auto-draft'");
 		$wpdb->query("delete from $wpdb->postmeta where meta_key ='_edit_last' or meta_key = '_edit_lock'");
 		$tables = $wpdb->get_results("SHOW TABLE STATUS");
 		foreach($tables as $table_name) 
@@ -59,7 +59,7 @@ function clean_opt_widget () {
 			echo "<th><b>".__('Tables non optimisées','daily-clean-opt-lite')."</b></th><th style='text-align:right'><b>".__('Pertes (en octets)','daily-clean-opt-lite')."</b></th></tr>".$tableau."</table>";
 		}
 		
-	$jumlah = $wpdb->get_var("select count(*) from $wpdb->posts where post_type='revision'");
+	$jumlah = $wpdb->get_var("select count(*) from $wpdb->posts where post_type='revision' OR post_status = 'auto-draft'");
 	$jumlah += $wpdb->get_var("select count(*) from $wpdb->postmeta where meta_key ='_edit_last' or meta_key = '_edit_lock' ");
 	
 	echo "<h2 style='text-align:center'><font color='#003399'></font>";

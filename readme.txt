@@ -2,8 +2,8 @@
 Contributors: luciole135
 Tags: clean, optimize, database, mysql, plugin, posts, post, draft
 Requires at least: 2.8
-Tested up to: 4.0
-Stable tag: 1.1
+Tested up to: 4.2
+Stable tag: 1.2
 
 Nettoyage et optimisation automatique et manuelle de la base de données.
 
@@ -29,6 +29,10 @@ Nettoyage et optimisation automatique et manuelle de la base de données.
 
 Usage et description sur mon site perso ici :
 http://additifstabac.free.fr/index.php/daily-cleaner-optimizer-lite-un-plugin-tres-leger-pour-nettoyer-et-optimiser-wordpress-automatiquement/
+== Changelog ==
+= 1.2 =
+* French: Suppression des brouillons automatiques
+* English: Removal of the auto-draft
 
 == Installation ==
 
