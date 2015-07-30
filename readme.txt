@@ -2,7 +2,7 @@
 Contributors: luciole135
 Tags: clean, optimize, database, mysql, plugin, posts, post, draft
 Requires at least: 2.8
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: 1.2.1
 
 Nettoyage et optimisation automatique et manuelle de la base de données.
